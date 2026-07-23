@@ -1,8 +1,16 @@
 import * as aws from "@pulumi/aws";
 
 // Create an AWS resource (S3 Bucket)
-const bucket = new aws.s3.Bucket("victor-bucket-rocketseat-pulumi", {
+const firstBucket = new aws.s3.Bucket("victor-bucket-rocketseat-pulumi", {
     bucket: "victor-bucket-rocketseat-pulumi",
+    tags: {
+        IAC: "true",
+    },
+
+});
+
+const secondBucket = new aws.s3.Bucket("victor-bucket-rocketseat-pulumi-second", {
+    bucket: "victor-bucket-rocketseat-pulumi-second",
     tags: {
         IAC: "true",
     },
@@ -19,9 +27,13 @@ const ecr = new aws.ecr.Repository("victor-ecr-rocketseat-pulumi", {
 
 
 // Export the name of the bucket
-export const bucketName = bucket.id;
-export const bucketInfo = bucket.bucket;
-export const bucketArn = bucket.arn;
+export const firstBucketName = firstBucket.id;
+export const firstBucketInfo = firstBucket.bucket;
+export const firstBucketArn = firstBucket.arn;
+
+export const secondBucketName = secondBucket.id;
+export const secondBucketInfo = secondBucket.bucket;
+export const secondBucketArn = secondBucket.arn;
 
 export const ecrName = ecr.name;
 export const ecrRepositoryURL = ecr.repositoryUrl;

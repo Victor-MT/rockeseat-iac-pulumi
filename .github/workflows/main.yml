@@ -20,7 +20,7 @@ jobs:
         id: install-node
         uses: actions/setup-node@v4
         with:
-          node-version: package.json
+          node-version: 24
 
       - name: Install pnpm
         id: install-pnpm

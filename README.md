@@ -30,7 +30,7 @@ Antes de começar, instale:
 - [Pulumi CLI 3 ou superior](https://www.pulumi.com/docs/iac/download-install/);
 - [AWS CLI v2](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-Confirme as instalações:
+Confirme as instalações: 
 
 ```bash
 node --version
